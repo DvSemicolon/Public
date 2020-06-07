@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/tutorials/index.css">
+  <title>Javascript Clock Ui Dark</title>
+</head>
+<body>
+  <div class="wrapper">
+    <i class="far fa-clock"></i>
+    <div class="modal__clock--analog">
+      <div class="clock">
+        <div class="hour">
+          <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+          <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+          <div class="sc" id="sc"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
+<script>
+  const iAnalogClock = document.querySelector(`.fa-clock`);
+  const modalClockAnalog = document.querySelector(`.modal__clock--analog`);
+
+  function hndClickAClock() {
+    //deg: 360 deg / 60 seconds or minutes
+    const deg = 6;
+    const hr = document.querySelector(`#hr`);
+    const mn = document.querySelector(`#mn`);
+    const sc = document.querySelector(`#sc`);
+    
+    //interval every 1s
+    setInterval(() => {
+      let day = new Date();
+      //get seconds, minutes, hours in degrees
+      let hh = day.getHours() * (deg * 5);
+      let mm = day.getMinutes() * deg;
+      let ss = day.getSeconds() * deg;
+      //transform every hand
+      hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
+      mn.style.transform = `rotateZ(${mm}deg)`;
+      sc.style.transform = `rotateZ(${ss}deg)`;
+    }, 1000);
+    //show the modal
+    modalClockAnalog.classList.add(`show`);
+  }
+
+  function hndKeyUp(e) {
+    if(e.key === `Escape`) {
+      //remove the clock modal
+      modalClockAnalog.classList.remove(`show`);
+    }
+  }
+
+  iAnalogClock.addEventListener(`click`, hndClickAClock);
+  window.addEventListener(`keyup`, hndKeyUp)
+</script>
+</body>
+</html>

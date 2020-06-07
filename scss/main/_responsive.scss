@@ -1,0 +1,151 @@
+@include media-mini {
+  p {font-size: 1.5rem;}
+  h2 {font-size: 1.8rem;}
+  .about, .projects {
+    &__bio-image {
+      justify-content: center;
+      height: 45vh;
+    }
+    .social-icons {
+      bottom: -1.5rem;
+    }
+  }
+  .nav {
+    .menu-nav {
+      &__link {
+        font-size: 2rem;
+      }
+    }
+  }
+  main {
+    .social-icons {
+       a {
+        .fa-github,
+        .fa-instagram,
+        .fa-twitter,
+        .fa-youtube {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-md {
+  .home p, .about p {font-size: 2rem;}
+  .home h2 {font-size: 2.5rem;}
+  .about, .projects {
+    &__bio-image {
+      justify-content: center;
+      height: 40vh;
+    }
+    &__items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .social-icons {
+      bottom: -1.5rem;
+    }
+    .text-secondary {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+    &__btns {
+      font-size: 1.7rem;
+    }
+  }
+  .menu-btn {
+    visibility: hidden;
+  }
+  .nav {
+    visibility: visible;
+    .menu-nav {
+      display: block;
+      transform: translateY(0);
+      height: 100%;
+      background: transparent;
+      text-align: right;
+      &__item {
+        display: inline;
+        padding-right: 1.5rem;
+      }
+      &__link {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  main {
+    .social-icons {
+      a {
+        .fa-github,
+        .fa-instagram,
+        .fa-twitter,
+        .fa-youtube {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+
+  .contact__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include media-lg {
+  .home p, .about p {font-size: 2.2rem;}
+  .home h2 {font-size: 3.5rem;}
+  .about, .projects {
+    &__bio-image {
+      justify-content: center;
+      height: 40vh;
+      
+      p{font-size: 2.2rem;}
+    }
+    &__items {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .social-icons {
+      bottom: -1.5rem;
+    }
+    .text-secondary {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+    &__btns {
+      font-size: 1.7rem;
+    }
+  }
+  main {
+    .social-icons {
+      a {
+        .fa-github,
+        .fa-instagram,
+        .fa-twitter,
+        .fa-youtube {
+          font-size: 3.5rem;
+        }
+      }
+    }
+  }
+
+  .contact__list {
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 2.5rem;
+  }
+}
+
+@include media-xl {
+  .about, .projects {
+    &__bio-image {
+      height: 35vh;
+    }
+  }
+  .home p {
+    padding-left: 8rem ;
+    padding-right: 8rem ;
+  }
+}

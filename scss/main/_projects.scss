@@ -3,7 +3,7 @@
 
   &__bio-image {
     position: relative;
-    height: 30vh;
+    height: 35vh;
     width: 100%;
     background: 
     linear-gradient(
@@ -11,27 +11,26 @@
       rgba($primary-color, 0.9),
       rgba($primary-color, 0.3)
     ),
-    url('../img/shoes.jpeg');
-  background-position: 50% 75%;
-  background-size: cover;
+    url('../../img/shoes.jpeg');
+    background-position: 50% 75%;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     .text-secondary {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 2rem;
     }
+
     p {
-      padding: 2rem;
-      text-align: center;
-      font-style: italic;
+      padding: 0 3rem;
     }
   }
 
   &__items {
-    width: 75vw;
+    width: 70vw;
     margin: 2rem auto 0 auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -44,6 +43,8 @@
     border-bottom: 5px solid $secondary-color;
     overflow: hidden;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 
     img {
       width: 100%;
@@ -60,7 +61,7 @@
       grid-gap: 1rem;
       @include transition-ease;
 
-      h2, p {
+      h2 {
         text-align: center;
       }
     }
@@ -120,6 +121,5 @@
     position: absolute;
     bottom: -1.2rem;
     left: 0;
-    // flex-direction: column;
   }
 }

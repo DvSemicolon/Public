@@ -1,0 +1,109 @@
+//variables
+$size-clock: 30;
+$size-hand-hr: $size-clock * 0.70;
+$size-hand-mn: $size-clock * 0.80;
+$size-hand-sc: $size-clock * 0.85;
+
+$clock-color: #ff0000;
+$color-sc: lighten( $clock-color, 80%);
+$color-mn: adjust-hue( $clock-color, 50%);
+$color-hr: darken($clock-color, 80%);
+
+:root {
+  --main-color:#fa0000;
+}
+@mixin clockHand ($width, $height, $zindex, $color) {
+  content: '';
+  position: absolute;
+  width: $width;
+  height: ($height) * 1rem;
+  background: $color;
+  z-index: $zindex;
+  border-radius: 6px 6px 0 0;
+}
+.fa-clock {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.modal__clock--analog {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  transform: scale(.9) translateX(100vw);
+  opacity: 0;
+  transition: ease-in-out all 2s;
+}
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ($size-clock) * 1rem;
+  height: ($size-clock) * 1rem;
+  border: black solid 3px;
+  border-radius: 50%;
+  background: $clock-color;
+  box-shadow: 
+    0 -15px 15px rgba(255,255,255,0.05),
+    inset 0 -15px 15px rgba(255,255,255,0.05),
+    0 -15px 15px rgba(0,0,0,0.8),
+    inset 0 -15px 15px rgba(0,0,0,0.8);
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 15;
+  }
+  .hour, .min, .sec {
+    position: absolute;
+  }
+
+  .hour {
+    width: $size-hand-hr * 1rem;
+    height: $size-hand-hr * 1rem;
+//35
+    .hr {
+      @extend .hour;
+    }
+  }
+  .min {
+    width: $size-hand-mn * 1rem;
+    height: $size-hand-mn * 1rem;
+//40
+    .mn {
+      @extend .min;
+    }
+  }
+  .sec {
+    width: $size-hand-sc * 1rem;
+    height: $size-hand-sc * 1rem;
+//45
+    .sc {
+      @extend .sec;
+    }
+  }
+
+  .hr, .mn, .sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .hr::before {
+    @include clockHand(8px, ($size-hand-hr / 2), 10, $color-hr);
+  }
+  .mn::before {
+    @include clockHand(4px, ($size-hand-mn / 2), 11, $color-mn);
+  }
+  .sc::before {
+    @include clockHand(2px, ($size-hand-sc / 2), 12, $color-sc);
+  }
+}
+

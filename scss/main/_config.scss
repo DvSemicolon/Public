@@ -10,6 +10,10 @@ $secondary-color: rgb(204, 65, 79);
   font-family: 'Architects Daughter', serif;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 @mixin transition-ease {
   transition: all 0.5s ease-in-out;
 }
@@ -19,6 +23,12 @@ $secondary-color: rgb(204, 65, 79);
     @return #000;
   } @else {
     @return #fff;
+  }
+}
+
+@mixin media-mini {
+  @media screen and (min-width: 320px) {
+    @content;
   }
 }
 

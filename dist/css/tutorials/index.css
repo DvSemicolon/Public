@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+.wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  background: #091921; }
+
+::-webkit-scrollbar {
+  width: 0; }
+
+#scrollPath, #progressbar {
+  position: fixed;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05); }
+
+#progressbar {
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  animation: anScrollbar 5s linear infinite; }
+  #progressbar::before, #progressbar::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px); }
+  #progressbar::after {
+    filter: blur(30px); }
+
+@keyframes anScrollbar {
+  0%, 100% {
+    filter: hue-rotate(0deg); }
+  50% {
+    filter: hue-rotate(360deg); } }
+
+@font-face {
+  font-family: graffiti;
+  src: url("../../font/aAttackGraffiti.ttf"); }
+
+@font-face {
+  font-family: brush;
+  src: url("../../font/blowbrush.ttf"); }
+
+@font-face {
+  font-family: luna;
+  src: url("../../font/Luna.ttf"); }
+
+@font-face {
+  font-family: pixel;
+  src: url("../../font/Minecraft.ttf"); }
+
+@font-face {
+  font-family: price;
+  src: url("../../font/pricedown bl.ttf"); }
+
+@font-face {
+  font-family: sign;
+  src: url("../../font/High Summit.ttf") format("ttf"); }
+
+:root {
+  --main-color:#fa0000; }
+
+.fa-clock {
+  font-size: 3rem;
+  color: #fff; }
+
+.modal__clock--analog {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  transform: scale(0.9) translateX(100vw);
+  opacity: 0;
+  transition: ease-in-out all 2s; }
+
+.clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  height: 30rem;
+  border: black solid 3px;
+  border-radius: 50%;
+  background: #ff0000;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05), inset 0 -15px 15px rgba(255, 255, 255, 0.05), 0 -15px 15px rgba(0, 0, 0, 0.8), inset 0 -15px 15px rgba(0, 0, 0, 0.8); }
+  .clock::before {
+    content: '';
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 15; }
+  .clock .hour, .clock .hour .hr, .clock .min, .clock .min .mn, .clock .sec, .clock .sec .sc {
+    position: absolute; }
+  .clock .hour, .clock .hour .hr {
+    width: 21rem;
+    height: 21rem; }
+  .clock .min, .clock .min .mn {
+    width: 24rem;
+    height: 24rem; }
+  .clock .sec, .clock .sec .sc {
+    width: 25.5rem;
+    height: 25.5rem; }
+  .clock .hr, .clock .mn, .clock .sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%; }
+  .clock .hr::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 10.5rem;
+    background: black;
+    z-index: 10;
+    border-radius: 6px 6px 0 0; }
+  .clock .mn::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 12rem;
+    background: #ffd500;
+    z-index: 11;
+    border-radius: 6px 6px 0 0; }
+  .clock .sc::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 12.75rem;
+    background: white;
+    z-index: 12;
+    border-radius: 6px 6px 0 0; }
+
+.show {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(0); }

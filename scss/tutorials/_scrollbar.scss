@@ -1,0 +1,36 @@
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+#scrollPath, #progressbar {
+  position: fixed;
+  right: 0;
+  width: 10px;
+  height: 100%;
+  background: rgba(255,255,255,0.05);
+}
+
+#progressbar {
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  animation: anScrollbar 5s linear infinite;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #008aff, #00ffe7);
+    filter: blur(10px);
+  }
+
+  &::after {
+    filter: blur(30px);
+  }
+}
+
+@keyframes anScrollbar {
+  0%,100% {filter: hue-rotate(0deg)}
+  50% {filter: hue-rotate(360deg)}
+}
+

@@ -14,3 +14,13 @@ function fillInfo(project) {
 
 projects.forEach(project => fillInfo(project))
 
+function hndScrollbar() {
+  let progressbar = document.querySelector(`#progressbar`);
+  let totalHeight = document.body.scrollHeight - window.innerHeight;
+  let progressHeight = (window.pageYOffset / totalHeight) *100;
+  progressbar.style.height = progressHeight + '%';
+}
+
+window.onscroll = hndScrollbar;
+window.onresize = hndScrollbar;
+

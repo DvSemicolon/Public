@@ -3,7 +3,7 @@
 
   &__bio-image {
     position: relative;
-    height: 35vh;
+    height: 55vh;
     width: 100%;
     background:
     linear-gradient(
@@ -11,9 +11,9 @@
       rgba($primary-color, 0.9),
       rgba($primary-color, 0.3)
     ),
-    url('../img/shoes.jpeg');
-  background-position: 50% 75%;
-  background-size: cover;
+    url('../../img/shoes.jpeg');
+    background-position: 50% 75%;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,6 +29,7 @@
     text-align: center;
 
     .text-secondary {
+      font-size: 2.5rem;
       padding-bottom: 1rem;
     }
   }
@@ -43,7 +44,7 @@
     &__path {
       border-radius: 10px;
       background: lighten($primary-color, 10%);
-      padding: 0.5rem;
+      padding: 2rem;
       border-bottom: 5px solid $secondary-color;
 
       h2, h3 {
@@ -51,6 +52,12 @@
       }
       h6 {
         margin: 0.3rem 0;
+      }
+      p{
+        text-align: left;
+      }
+      a{
+        font-size: 1.3rem;
       }
     }
   }
@@ -62,7 +69,7 @@
     position: absolute;
     bottom: -1.2rem;
     left: 0;
-    // flex-direction: column;
   }
-
 }
+
+
