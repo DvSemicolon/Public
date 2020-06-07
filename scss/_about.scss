@@ -1,0 +1,68 @@
+.about {
+  padding-bottom: 2rem;
+
+  &__bio-image {
+    position: relative;
+    height: 35vh;
+    width: 100%;
+    background:
+    linear-gradient(
+      to right,
+      rgba($primary-color, 0.9),
+      rgba($primary-color, 0.3)
+    ),
+    url('../img/shoes.jpeg');
+  background-position: 50% 75%;
+  background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    p {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__bio {
+    width: 80%;
+    text-align: center;
+
+    .text-secondary {
+      padding-bottom: 1rem;
+    }
+  }
+
+  .learning {
+    width: 75vw;
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1.5rem;
+
+    &__path {
+      border-radius: 10px;
+      background: lighten($primary-color, 10%);
+      padding: 0.5rem;
+      border-bottom: 5px solid $secondary-color;
+
+      h2, h3 {
+        margin: 0.5rem 0;
+      }
+      h6 {
+        margin: 0.3rem 0;
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: -1.2rem;
+    left: 0;
+    // flex-direction: column;
+  }
+
+}
